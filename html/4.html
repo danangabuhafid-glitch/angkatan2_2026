@@ -12,31 +12,71 @@
     <section class="parallax bg-1">
         <div class="content">
             <h1>Hello saya, Danang Abu Hafid</h1>
+            <img src="img/mark.jpg" alt="mark" class="profile">
             <p>Web Programmer & Turu</p>
         </div>
     </section>
     <section class="normal-section">
         <div class="container">
             <h2>Tentang saya</h2>
+            <img src="img/prabowo.jpg" alt="" class="satu" onclick="playSound('audio1')">
+            <img src="img/gibran.jpg" alt="" class="satu" onclick="playSound('audio2')">
+            <img src="img/jokowi.jpg" alt="" class="satu" onclick="playSound('audio3')">
+            <img src="img/maruf.jpg" alt="" class="dua" onclick="playSound('audio4')">
             <p>Saya Mengantuk anjay</p>
+                    <audio id="audio1" src="audio/prabowo.mp3"></audio>
+                    <audio id="audio2" src="audio/gibran.mp3"></audio>
+                    <audio id="audio3" src="audio/jokowi.mp3"></audio>
+                    <audio id="audio4" src="audio/maruf.mp3"></audio>
         </div>
     </section>
     <section class="parallax bg-2">
         <div class="content">
             <h2>Keahlian saya</h2>
-            <p>Eat, Sleep, Repeat</p>
+           <div class="wraper">
+                <div class="skill-wrapper">
+                    <h3>Skill</h3>
+                    <ul>
+                        <li>EAT</li>
+                        <li>SLEEP</li>
+                        <li>REPEAT</li>
+                    </ul>
+                </div>
+                <div class="skill-wrapper">
+                    <h3>Experience</h3>
+                    <ul>
+                        <li>Makan Pagi</li>
+                        <li>Makan Siang</li>
+                        <li>Makan Malam</li>
+                        <li>Tidur</li>
+                        <li>Duduk digerbong belakang KRL</li>
+                    </ul>
+                </div>
+           </div>
         </div>
     </section>
     <section class="normal-section">
         <div class="container">
             <h2>Hubungi saya</h2>
             <p>Tertarik bekerja sama? Kirimkan pesan</p>
-            <button class="btn-contact">Kirim Pesan</button>
+            <form action="" method="post" class="contact-form">
+                <input type="text" name="name" placeholder="Isi nama Anda" required>
+                <input type="text" name="email" placeholder="Isi email Anda" required>
+                    <textarea name="message" cols="30" rows="10" placeholder="Isi pesan anda"></textarea>
+                <button type="submit">Kirim Pesan</button>
+            </form>
         </div>
     </section>
     <footer>
         <p>&copy; 2026 Personal Brand. Dibuat di PPKD JP</p>
     </footer>
+    <script>
+        function playSound(id) {
+            const audio = document.getElementById(id);
+            audio.currentTime = 0; // biar bisa diulang dari awal
+            audio.play();
+        }
+    </script>
 </body>
 
 </html>
