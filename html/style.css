@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body, html {
     height: 100%;
     margin: 0;
@@ -17,6 +21,7 @@ body, html {
     justify-content: center;
     align-items: center;
     text-align: center;
+    
 }
 
 .bg-1 {
@@ -45,7 +50,8 @@ body, html {
     border-radius: 12px;
     width: 60%;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(8px);
+    backdrop-filter: transparent(8px);
+   
 }
 
 .content h1 {
@@ -95,15 +101,6 @@ p {
     display: flex;
     flex-direction: column;
     gap: 15px;
-}
-
-
-
-footer {
-    background-color: #1e293b;
-    color: #f8fafc;
-    text-align: center;
-    padding: 20px 0;
 }
 
 .contact-form input,
@@ -173,7 +170,7 @@ textarea:focus {
     width: 250px;
     border-radius: 15%;
     object-fit: cover;
-
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .satu {
@@ -181,6 +178,7 @@ textarea:focus {
     border-radius: 10%;
     margin: 10px;
     object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .dua {
@@ -188,4 +186,108 @@ textarea:focus {
     border-radius: 10%;
     margin: 10px;
     object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile:hover, .satu:hover, .dua:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+nav {
+    display: flex;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #2563eb;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 10px 0;
+        text-align: center;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: all 0.4s ease;
+    }
+
+    nav.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    nav a {
+        margin: 15px 0;
+    }
+}
+.profile {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}   
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2563eb;
+    color: white;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+footer p {
+    color: white;
+    margin: 0;
 }
