@@ -1,0 +1,59 @@
+:root {
+    --primary-color: #0F52BA;
+    --surface-color: #F7F9FB;
+    --on-surface-varian: #424754;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--surface-color);
+    color: #191c1e;
+}
+.navbar-custom {
+    background-color: rgba(247, 249, 251, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #c2c6d6;
+
+}
+
+.nav-link-custom {
+    font-size: 14px;
+    font-weight: 500;
+    color: #424754;
+    text-decoration: none;
+    transition: 0.2s ease-in-out;
+}
+.nav-link-custom:hover,
+.nav-link-custom.active {
+    color: var(--primary-color);
+}
+
+.hero-img-container {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border: 1px solid #c2c6d6;
+    background-color: white;
+    padding: 12px;
+    border-radius: 16px;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 10%), 0 8px 10px -6px rgb(0 0 0 / 10%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+.hero-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 10%), 0 8px 10px -6px rgb(0 0 0 / 10%);
+    transition: 1s;
+    filter: grayscale(75%);
+}
+.hero-img-container:hover img {
+    filter: grayscale(0%);
+}
+
+.soft-shadow {
+    box-shadow: 0 5px 30px -5px rgb(0 0 0 / 10%), 0 5px 10px -6px rgb(0 0 0 / 10%);
+}
