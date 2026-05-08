@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/output.css">
+    <title>Document</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body class="font-inter text-on-surface selection:bg-primary/20">
+    <nav class="fixed top-0 left-0 w-full bg-surface border-b border-outline-variant z-50">
+        <div class="w-full px-gutter py-4 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <span class="font-bold text-primary text-3xl">TURA-TURU</span>
+            </div>
+            <div class="flex items-center gap-7">
+                <a href="" class="text-primary border-b-2 border-primary pb-1 transition-colors duration-200">Home</a>
+                <a href=""
+                    class="font-medium text-on-surface-variant hover:text-primary transition-colors duration-200">Experience</a>
+                <a href=""
+                    class="font-medium text-on-surface-variant hover:text-primary transition-colors duration-200">Project</a>
+                <a href=""
+                    class="font-medium text-on-surface-variant hover:text-primary transition-colors duration-200">Skill</a>
+                <a href=""
+                    class="font-medium text-on-surface-variant hover:text-primary transition-colors duration-200">Contact</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button
+                    class="bg-primary text-on-primary px-5 py-2 rounded-lg hover:brightness-110 transition-all shadow-sm">Download
+                    CV</button>
+            </div>
+        </div>
+    </nav>
+    <main class="pt-32" id="home">
+        <section class="max-w-container-max mx-auto px-gutter py-12 lg:py-24">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
+                <!-- Kolom Kiri -->
+                <div class="w-full lg:w-1/2">
+                    <span class="text-primary font-medium uppercase block mb-4 text-[14px] tracking-[2px]">
+                        IT Enthusiast
+                    </span>
+                    <div class="mb-4">
+                        <h1 class="text-h1 font-bold text-on-surface">Danang Abu Hafid</h1>
+                        <h2 class="text-h2 text-primary font-bold">Web Developer</h2>
+                    </div>
+                    <p class="border-l-4 border-primary/25 pl-4 text-on-surface-variant mb-10 text-body-lg leading-relaxed">
+                        Saya adalah seorang Fullstack Web Developer yang bersemangat dalam menciptakan aplikasi web
+                        yang responsif, modern, dan efisien. Memiliki pengalaman dalam merancang solusi digital yang
+                        interaktif dari sisi front-end hingga back-end untuk memecahkan berbagai masalah.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4">
+                        <button class="bg-primary text-on-primary py-3 px-6 rounded-lg font-medium flex items-center gap-2 hover:brightness-110 transition-all shadow-sm">
+                            Download CV 
+                            <span class="material-symbols-outlined">download</span>
+                        </button>
+                        <a href="https://danangabuhafid.my.id/project" class="border border-primary text-primary py-3 px-6 rounded-lg font-medium flex items-center gap-2 hover:bg-primary/5 transition-all">
+                            View Project
+                            <span class="material-symbols-outlined">visibility</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Kolom Kanan -->
+                <div class="w-full lg:w-1/2 flex justify-center items-center mt-12 lg:mt-0">
+                    <div class="relative mx-auto w-full max-w-[450px]">
+                        <div class="soft-shadow rounded-2xl overflow-hidden">
+                            <img alt="Portrait" class="w-full h-auto object-cover" src="img/profil.jpg" onerror="this.src='assets/img/hero_portrait.png'">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
