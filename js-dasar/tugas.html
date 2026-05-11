@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" method="post">
+        <label for="Nama">Nama</label0><br>
+            <input type="text" id="nama" required>
+            <br>
+            <br>
+            <label for="">Nilai Teori</label><br>
+            <input type="number" id="nilaiTeori" required>
+            <br>
+            <br>
+            <label for="">Nilai Praktek</label><br>
+            <input type="number" id="nilaiPraktek" required>
+            <br>
+            <br>
+            <label for="">Nilai Kehadiran</label><br>
+            <input type="number" id="nilaiKehadiran" required>
+            <br>
+            <br>
+            <label for="">Status</label>
+            <br>
+            <select name="" id="opsi" required>
+                <option value="">Pilih Pelanggaran</option>
+                <option value="aman">Tidak Melakukan Pelanggaran</option>
+                <option value="tidak">Melakukan Pelanggaran</option>
+            </select>
+            <br>
+            <br>
+            <button type="button" onclick="perhitungan()">Cek Lulus</button>
+            <button type="reset">Reset</button>
+            <br>
+            <br>
+            <label for="hasil">Hasil</label><br>
+            <textarea id="hasil" rows="5" cols="40" placeholder="Hasil" readonly></textarea><br><br>
+
+    </form>
+    <script>
+
+        function perhitungan() {
+            let nama = document.querySelector("#nama").value;
+            let nilaiTeori = parseFloat(document.querySelector("#nilaiTeori").value);
+            let nilaiPraktek = parseFloat(document.querySelector("#nilaiPraktek").value);
+            let nilaiKehadiran = parseFloat(document.querySelector("#nilaiKehadiran").value);
+            let opsi = document.querySelector("#opsi").value;
+            let total_nilai = (nilaiTeori + nilaiPraktek) / 2;
+            let rata_rata = total_nilai;
+            let hasil = "";
+
+           if (total_nilai > 70 && nilaiKehadiran >= 70 && opsi == "aman") {
+                hasil = "Lulus";
+            }
+            else if (total_nilai <= 70 && nilaiKehadiran >= 70 && opsi == "tidak") {
+                hasil = "Tidak Lulus";
+            }
+            else if (total_nilai > 70 && nilaiKehadiran <= 70 && opsi == "tidak") {
+                hasil = "Tidak Lulus";
+            }
+            else {
+                hasil = "Tidak Lulus";
+            }
+
+            document.getElementById("hasil").value = `Nama: ${nama}\nRata-Rata: ${rata_rata}\nStatus: ${hasil}`;
+                
+        }
+
+        // }
+    </script>
+</body>
+
+</html>

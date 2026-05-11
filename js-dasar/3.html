@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" method="post">
+        <label for="">Nilai Awal</label><br>
+        <input type="number" id="nilaiAwal">
+        <br>
+        <label for="">Operator</label><br>
+        <select id="operator" required>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <br>
+        <label for="">Nilai Kedua</label><br>
+        <input type="number" id="nilaiKedua">
+        <br>
+        <br>
+        <button type="button" onclick="perhitungan()">Hitung</button>
+        <br>
+        <br>
+        <label for="hasil">Hasil</label>
+        <input type="text" id="hasil" placeholder="Hasil" readonly><br><br>
+    </form>
+    <script>
+
+        function perhitungan() {
+
+            let nilaiAwal = parseInt(document.querySelector("#nilaiAwal").value);
+            let nilaiKedua = parseInt(document.querySelector("#nilaiKedua").value);
+            let operator = document.getElementById("operator").value;
+            let hasil = 0;
+            
+            if ("+" == operator) {
+                nilaiAwal+nilaiKedua;
+            }
+            else if ("-" == operator) {
+                nilaiAwal-nilaiKedua;
+            }
+            else if ("*" == operator) {
+                nilaiAwal*nilaiAwal;
+            }
+            else if ("/" == operator) {
+                nilaiAwal/nilaiKedua;
+            }
+            else {
+                hasil= "Operator tidak ditemukan";
+            }
+            document.getElementById("hasil").value = hasil;
+            
+            
+            // let nilaiAwal = parseInt(document.querySelector("#nilaiAwal").value);
+            // let nilaiKedua = parseInt(document.querySelector("#nilaiKedua").value);
+            // let operator = document.getElementById("operator").value;
+            // let hasil = 0;
+
+            // switch (operator) {
+            //     case "+":
+            //         hasil = nilaiAwal + nilaiKedua;
+            //         break;
+            //     case "-":
+            //         hasil = nilaiAwal - nilaiKedua;
+            //         break;
+            //     case "*":
+            //         hasil = nilaiAwal * nilaiKedua;
+            //         break;
+            //     case "/":
+            //         hasil = nilaiAwal / nilaiKedua;
+            //         break;
+            //     default:
+            //         hasil = "Operator tidak ditemukan";
+            //         break;
+            // }
+            
+            // Menampilkan hasil ke input
+        
+        }
+        // function tambah() {
+        //     let nilaiAwal = document.querySelector("#nilaiAwal").value;
+        //     let nilaiKedua = document.querySelector("#nilaiKedua").value;
+        //     let hasil = 0;
+        //     hasil = parseInt(nilaiAwal) + parseInt(nilaiKedua);
+        //     document.getElementById("hasil").innerHTML = `Hasil Penjumlahan: ${hasil}`;
+        //     return hasil;
+        // }
+        // function kurang() {
+        //     let nilaiAwal = document.querySelector("#nilaiAwal").value;
+        //     let nilaiKedua = document.querySelector("#nilaiKedua").value;
+        //     let hasil = 0;
+        //     hasil = parseInt(nilaiAwal) - parseInt(nilaiKedua);
+        //     document.getElementById("hasil").innerHTML = `Hasil Pengurangan: ${hasil}`;
+        //     return hasil;
+        // }
+        // function kali() {
+        //     let nilaiAwal = document.querySelector("#nilaiAwal").value;
+        //     let nilaiKedua = document.querySelector("#nilaiKedua").value;
+        //     let hasil = 0;
+        //     hasil = parseInt(nilaiAwal) * parseInt(nilaiKedua);
+        //     document.getElementById("hasil").innerHTML = `Hasil Perkalian: ${hasil}`;
+        //     return hasil;
+        // }
+        // function bagi() {
+        //     let nilaiAwal = document.querySelector("#nilaiAwal").value;
+        //     let nilaiKedua = document.querySelector("#nilaiKedua").value;
+        //     let hasil = 0;
+        //     hasil = parseInt(nilaiAwal) / parseInt(nilaiKedua);
+        //     document.getElementById("hasil").innerHTML = `Hasil Pembagian: ${hasil}`;
+        //     return hasil;
+        // }
+    </script>
+</body>
+
+</html>

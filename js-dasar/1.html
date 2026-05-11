@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="pesan"></p>
+    <script>
+        //variable penampung nilai
+        // const = nilai tetep
+        // let = nilai bisa berubah-ubah
+        // var = bisa berubah-ubah (tetapi tidak dianjurkan)
+        // write = menulis sesuatu di document
+        // alert = menampilkan pesan di alert
+        // prompt = menampilkan inputan
+
+        const nama_depan = "Danang";
+        const nama_belakang = "Abu Hafid";
+        console.log(nama_depan + " " + nama_belakang + " ");
+        document.write(`Nama Saya adalah ${nama_depan} ${nama_belakang} `);
+        let nama = "Saya ngantuk";
+        let usia = "banget";
+        let pesan = `${nama} ${usia}`;
+        let angka1 = 1;
+        let angka2 = 2;
+
+        console.log(`Hasilnya adalah: ${angka1} + ${angka2} =`, (angka1 + angka2));
+        console.log(`Hasilnya adalah: ${angka1} + ${angka2} =`, (angka1 - angka2));
+        console.log(`Hasilnya adalah: ${angka1} + ${angka2} =`, (angka1 * angka2));
+        console.log(`Hasilnya adalah: ${angka1} + ${angka2} =`, (angka1 / angka2));
+        console.log(`Hasilnya adalah: ${angka1} % ${angka2} =`, (angka1 % angka2));
+        document.getElementById("pesan").innerHTML = pesan;
+        // document.write(pesan);
+
+    </script>
+</body>
+
+</html>
