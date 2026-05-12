@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="card" style="background-color: green; color: white; padding: 10px;">
+        <p>Promo Spesial Diskon 50% Hari ini!</p>
+        <button id="tutup-notifikasi">Tutup (x)</button>
+    </div>
+<br>
+    <input type="text" id="input-keranjang" placeholder="Masukkan Buah">
+    <button id="tambah-keranjang">Tambah</button>
+    <ul id="daftar-belanja">
+        <li>Stroberi <button class="btn-hapus">x</button></li><br>
+        <li>Mangga <button class="btn-hapus">x</button></li><br>
+        <li>Apel <button class="btn-hapus">x</button></li><br>
+    </ul>
+    <script>
+        const card = document.querySelector(".card");
+        const tutupCard = document.getElementById("tutup-notifikasi");
+        tutupCard.addEventListener("click", () => { 
+            card.remove();
+        });
+
+        const btnHapus = document.querySelectorAll(".btn-hapus");
+        for(let i=0; i<btnHapus.length; i++) {
+            btnHapus[i].addEventListener("click", function() {
+               this.parentElement.remove() 
+                // btnHapus[i].remove();
+            });
+        }
+       console.log(btnHapus);
+
+       const TambahKeranjang = document.getElementById("tambah-keranjang");
+       
+       const daftarbelanja = document.getElementById("daftar-belanja");
+       const inputKeranjang = document.getElementById("input-keranjang");
+       TambahKeranjang.addEventListener("click", function () { 
+           const li = document.createElement('li');
+           li.innerHTML = inputKeranjang.value + `<button class="btn-hapus">x</button>` + `<br>`;
+           daftarbelanja.appendChild(li);
+           inputKeranjang.value = "";
+
+        })
+
+        daftarbelanja.addEventListener("click", function (e) { 
+            if (e.target.classList.contains("btn-hapus")) {
+                e.target.parentElement.remove();
+            }
+         })
+
+</script>
+</body>
+</html>

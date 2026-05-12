@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" name="" id="inputNama" placeholder="Masukan Nama Anda">
+    <button id="btn-sapa">Sapa Saya!</button>
+    <h2 id="teks-sapaan"></h2>
+
+    <script>
+        //  event handling + DOM
+        // #:id, class: . element/TAG: h1
+
+        const btnSapa = document.getElementById("btn-sapa");
+        btnSapa.addEventListener('click', function () {
+            // mau melakukan apa
+            const inputNama = document.getElementById('inputNama').value;
+            const teksSapaan = document.getElementById('teks-sapaan');
+            console.log(inputNama);
+            teksSapaan.innerText = `Halo, selamat datang ${inputNama}`;
+            // teksSapaan.innerText = "Halo, selamat datang " + inputNama;
+            console.dir(teksSapaan)
+            teksSapaan.style.color = "red";
+            teksSapaan.style.fontSize = "20px";
+            teksSapaan.style.fontWeight = "bold";
+            teksSapaan.style.textAlign = "center";
+            teksSapaan.style.fontFamily = "Arial";
+            teksSapaan.style.textTransform = "uppercase";
+        });
+
+        // btnSapa.addEventListener('click', () => {}); // arrow function
+    </script>
+</body>
+
+</html>
