@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Change
+    </title>
+</head>
+
+<body>
+    <label for="">Pilih Tema Layar</label>
+    <select name="" id="tema-layar">
+        <option value="">Pilih Tema</option>
+        <option value="Terang">Terang</option>
+        <option value="Gelap">Gelap</option>
+    </select>
+    <br>
+    <br>
+    <label for="">Pilih Tema Bahasa</label>
+    <select name="" id="tema-bahasa">
+        <option value="">Pilih Bahasa</option>
+        <option value="Indonesia">Indonesia</option>
+        <option value="English">English</option>
+    </select>
+
+    <h2 id="teks-status">Belum Ada Pilihan</h2>
+
+    <script>
+        const temaLayar = document.getElementById("tema-layar");
+        const temaBahasa = document.getElementById("tema-bahasa");
+        const teksStatus = document.getElementById("teks-status");
+        temaLayar.addEventListener("change", function (e) {
+            if (e.target.value === "Terang") {
+                document.body.style.backgroundColor = 'white';
+                document.body.style.color = 'black';
+                teksStatus.innerHTML = "Tema Layar: Terang";
+            } else if (e.target.value === "Gelap") {
+                document.body.style.backgroundColor = "black";
+                document.body.style.color = "white";
+                teksStatus.innerHTML = "Tema Layar: Gelap";
+            }
+        })
+
+        const body = document.querySelector('body');
+
+        temaBahasa.addEventListener("change", function (e) {
+            if (e.target.value === "Indonesia") {
+                body.style.fontFamily = "Arial";
+                teksStatus.innerHTML = "Bahasa: Indonesia";
+            } else if (this.value === "English") {
+                document.body.style.fontFamily = "Times New Roman";
+                teksStatus.innerHTML = "Language: English";
+            }
+        })
+
+    </script>
+</body>
+
+</html>

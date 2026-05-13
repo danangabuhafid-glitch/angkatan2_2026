@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array JavaScript</title>
+</head>
+
+<body>
+    <div class="mb-3">
+        <form action="">
+            <label for="nama">Nama</label>
+            <input type="text" id="nama">
+            <label for="jabatan">Jabatan</label>
+            <input type="text" id="jabatan">
+            <label for="partai">Partai</label>
+            <input type="text" id="partai">
+            <button type="submit" id="btn-tambah-pejabat">Tambah Data</button>
+        </form>
+    </div>
+    <table border="1" width="100%">
+        <thead>
+            <tr>
+                <th>Nama</th>
+                <th>Jabatan</th>
+                <th>Partai</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody id="table-pejabat">
+    </table>
+    <!-- Array di JavaScript -->
+    <script>
+        let buah = ["Semangka", "Mangga", "Pisang", "Anggur"];
+        let daftarHarga = [5000, 10000, 15000, 20000];
+        let mixHargaBuah = ["Duren", 100000, "Kiwi", 5000] // Array Multi dimensi
+        let peserta = [
+            ["Budi", "Laki-Laki", "Belum Menikah"],
+            ["Ani", "Perempuan", "Menikah"],
+            ["Joko", "Laki-Laki", "Belum Menikah"],
+            ["Prabowo", "Laki-Laki", "Biji Satu"],
+        ] //Array Multidimensi
+        let daftarPejabat = [
+            {
+                nama: "Jokowi",
+                jabatan: "Presiden Bayangan",
+                partai: "PSI"
+            },
+            {
+                nama: "Prabowo",
+                jabatan: "Presiden Boneka",
+                partai: "Gerindra"
+            },
+            {
+                nama: "Teddy",
+                jabatan: "Selir Prabowo",
+                partai: "Tidak Ada"
+            }
+        ]
+
+        console.log(daftarPejabat[1].nama, daftarPejabat[1].jabatan, daftarPejabat[1].partai);
+        console.log(peserta[3]);
+        console.log(mixHargaBuah[0], mixHargaBuah[1]);
+        console.log(buah);
+        console.log(buah[0], daftarHarga[0]);
+        console.log(buah[1], daftarHarga[1]);
+        console.log(buah[2], daftarHarga[2]);
+        console.log(buah[3], daftarHarga[3]);
+
+        const tbodyPejabat = document.getElementById("table-pejabat");
+        function getDataPejabat() {
+            tbodyPejabat.innerHTML = "";
+            for (let i = 0; i < daftarPejabat.length; i++) {
+                let barisBaru = document.createElement("tr");
+                barisBaru.innerHTML =
+                    ` <td>${daftarPejabat[i].nama}</td>
+                <td>${daftarPejabat[i].jabatan}</td>
+                <td>${daftarPejabat[i].partai}</td>
+                <td><button class="btn-hapus" data-index=${i}>Hapus</button></td>`
+
+                tbodyPejabat.appendChild(barisBaru);
+            }
+        }
+        getDataPejabat();
+
+        tbodyPejabat.addEventListener("click", function (e) {
+            if (e.target.classList.contains("btn-hapus")) {
+                const index = e.target.dataset.index;
+                daftarPejabat.splice(index, 1);
+                e.target.parentElement.parentElement.remove();
+            }
+        })
+
+        const tambahPejabat = document.getElementById("btn-tambah-pejabat");
+        const form = document.querySelector("form");
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const nama = document.getElementById("nama").value;
+            const jabatan = document.getElementById("jabatan").value;
+            const partai = document.getElementById("partai").value;
+            daftarPejabat.push({ nama, jabatan, partai });
+            getDataPejabat();
+            form.reset();
+        })
+    </script>
+</body>
+
+</html>
